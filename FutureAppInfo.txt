@@ -1,0 +1,15 @@
+To perform real-time tracking of the database, you might want to implement something like a change tracking mechanism or use real-time databases (for example, Firebase). 
+Then, whenever a new song is added to your Songs table, an event triggers which copies the corresponding MP3 file from your desktop music library folder to the cue playlist folder.
+
+Here's a high-level pseudocode representation:
+
+Listen for Post([FromBody] Song value) events in your app.
+Upon receiving a new song addition:
+Get the song's metadata from the Songs table.
+Locate the related MP3 file in the local music library.
+Copy this file into the DJ's cue playlist folder.
+Remember that doing operations like copying files on a local filesystem might require your application to have appropriate permissions. 
+Also, ensure your DJ app can handle changes to the cue playlist folder while it's running.
+
+Also, consider error handling scenarios: what if a file doesn't exist, or there's not enough disk space available? 
+It would be wise to think about these factors and add proper error/exception handling procedures to your app.

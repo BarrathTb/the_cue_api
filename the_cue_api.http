@@ -1,0 +1,6 @@
+@the_cue_api_HostAddress = http://localhost:5184
+
+GET {{the_cue_api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
